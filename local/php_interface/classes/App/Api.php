@@ -15,7 +15,7 @@ class Api
      *
      * @return Response
      */
-    static function addCertificate(Request $request, Response $response)
+    public static function addCertificate(Request $request, Response $response)
     {
         $params = $request->getQueryParams();
 
@@ -39,12 +39,22 @@ class Api
 
         $cert = stream_context_get_params($read);
         $parsed_cert = openssl_x509_parse($cert['options']['ssl']['peer_certificate']);
-        //Проверка сертификата на валидность
+        //Проверка сертификата на валидность / уже наличие сертификата в блокчейне
         //Сохраняем сертификат в IPFS (для периодической проверки OSCP)
         //Кладем в блокчейн serialNumber и validTo и хэш с IPFS
         //Если все успех то возвращаем успех
         $response->getBody()->write(json_encode(''));
 
         return $response;
+    }
+    public static function checkCertificate(Request $request, Response $response)
+    {
+        //Проверка статуса сертификата
+        //Если сертификат недействителен уведомить соответствующий домен о невалидном входе
+    }
+
+    public static function sendMessage()
+    {
+        //Отправка определенного сообщения на api сервера
     }
 }
