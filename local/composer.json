@@ -1,15 +1,24 @@
 {
-    "require": {
-        "sc0vu/web3.php": "^0.1.4",
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.5",
-        "cloutier/php-ipfs-api": "^0.0.6",
-      "ext-openssl": "*",
-        "ext-json": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "php_interface/classes/App"
-        }
+  "minimum-stability": "dev",
+  "require": {
+    "sc0vu/web3.php": "^0.1.4",
+    "slim/slim": "4.*",
+    "slim/psr7": "^1.5",
+    "cloutier/php-ipfs-api": "^0.0.6",
+    "ext-openssl": "*",
+    "ext-json": "*",
+    "spatie/ssl-certificate": "^1.12",
+    "mlocati/ocsp": "^1.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "php_interface/classes/App"
     }
+  },
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
+  }
 }
