@@ -6,20 +6,21 @@ contract CertLogger {
 
     uint private counter = 0;
 
-    event AddedCertificate(uint indexed id, bytes32 indexed cert_id, uint  expiry);
+    event AddCertificate(uint id, bytes32 indexed cert_id,bytes32 cert_hash,bytes32 issuer_hash, uint  expiry);
+
     event RevokedCertificate(uint indexed id);
 
-    function addAttribute(bytes32 cert_id, uint expiry) public returns (uint) {
+    function addAttribute(bytes32 cert_id,bytes32 cert_hash,bytes32 issuer_hash, uint expiry) public returns (uint) {
 
         uint id = counter++;
 
-        emit AddedCertificate(id, cert_id, expiry);
+        emit AddCertificate(id, cert_id,cert_hash,issuer_hash, expiry);
 
         return id;
 
     }
 
-    function revokeSignature(uint id) public returns (uint) {
+    function revokeCertificate(uint id) public returns (uint) {
         emit RevokedCertificate(id);
         return id;
     }

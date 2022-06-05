@@ -8,6 +8,6 @@ $app = AppFactory::create();
 $app->setBasePath('/api');
 
 $app->post('/addCertificate/', '\App\Api::addCertificate');
-$app->post('/checkCertificate/', '\App\Api::checkApi');
+$app->post('/checkCertificate/', '\App\Api::checkCertificate');
 
 $app->run();

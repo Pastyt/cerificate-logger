@@ -6,9 +6,9 @@
     "cloutier/php-ipfs-api": "^0.0.6",
     "ext-openssl": "*",
     "ext-json": "*",
-    "spatie/ssl-certificate": "^1.12",
     "mlocati/ocsp": "^1.0",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "web3p/web3.php": "dev-master"
   },
   "autoload": {
     "psr-4": {
