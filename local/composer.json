@@ -1,7 +1,6 @@
 {
   "minimum-stability": "dev",
   "require": {
-    "sc0vu/web3.php": "^0.1.4",
     "slim/slim": "4.*",
     "slim/psr7": "^1.5",
     "cloutier/php-ipfs-api": "^0.0.6",
